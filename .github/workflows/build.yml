@@ -21,13 +21,13 @@ jobs:
           npm install @capacitor/android
           npx cap add android
       - name: Capacitor Sync
-      run: |
+        run: |
        npx cap sync android
       - name: Build APK
-      run: |
-      cd android
-      chmod +x gradlew
-      ./gradlew assembleDebug
+        run: |
+         cd android
+         chmod +x gradlew
+         ./gradlew assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
