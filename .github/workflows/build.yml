@@ -22,12 +22,12 @@ jobs:
           npx cap add android
       - name: Capacitor Sync
         run: |
-       npx cap sync android
+          npx cap sync android
       - name: Build APK
         run: |
-         cd android
-         chmod +x gradlew
-         ./gradlew assembleDebug
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
