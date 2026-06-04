@@ -1,7 +1,7 @@
 // ─── Storage shim (replaces Claude's window.storage with localStorage) ────────
 import { useState, useEffect } from "react";
 
-if (typeof window !== "undefined" && !window.storage) { {
+if (typeof window !== "undefined" && !window.storage) { 
   window.storage = {
     set: async (k, v) => {
       localStorage.setItem(k, v);
