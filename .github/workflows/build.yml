@@ -16,11 +16,18 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
-      - name: Capacitor Sync & Build APK
+      - name: Create Android Platform
         run: |
-          npx cap sync android
-          cd android
-          ./gradlew assembleDebug
+          npm install @capacitor/android
+          npx cap add android
+      - name: Capacitor Sync
+      run: |
+       npx cap sync android
+      - name: Build APK
+      run: |
+      cd android
+      chmod +x gradlew
+      ./gradlew assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
