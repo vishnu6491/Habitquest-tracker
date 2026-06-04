@@ -1,0 +1,11 @@
+{
+  "appId": "com.habitquest.app",
+  "appName": "HabitQuest",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#0a0715"
+  }
+}
