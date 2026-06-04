@@ -1,4 +1,6 @@
 // ─── Storage shim (replaces Claude's window.storage with localStorage) ────────
+import { useState, useEffect } from "react";
+
 if (!window.storage) {
   window.storage = {
     set: async (k, v) => {
@@ -18,8 +20,6 @@ if (!window.storage) {
     }),
   };
 }
-
-import { useState, useEffect } from "react";
 
 // ─── Utility ──────────────────────────────────────────────────────────────────
 const todayKey  = () => new Date().toISOString().slice(0,10);
